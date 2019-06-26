@@ -1,5 +1,6 @@
 package oca_skills;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MethodsandArrays {	
@@ -61,8 +62,12 @@ public class MethodsandArrays {
 			System.out.println();
 		}	
 		
-		//
-		
+		//Eight Queens puzzle: placing 8 queens on a chessboard such that no two queens can attack eachother
+		String gridOutput = "";
+		char[][] gameGrid = new char[8][8];
+		gridOutput = Arrays.deepToString(gameGrid).replace("], ", "]\n");
+		gridOutput = gridOutput.substring(1,gridOutput.length() - 1).replace("[", "|").replace("]", "|").replace(", ","|");
+		System.out.println(gridOutput);
 	}
 
 	public static int sumOfDoubleEvenPlace(String number) {

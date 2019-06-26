@@ -1,5 +1,5 @@
 package VierOpEenRij;
-import static Gamefolder.Game.gameGrid;
+import static VierOpEenRij.Game.gameGrid;
 
 public class GameLogic {
 	byte row = 1;
