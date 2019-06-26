@@ -3,6 +3,7 @@ package oca_skills;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
 public class MethodsandArrays {	
 	public static void main(String[] args) {
 		//Setup of used variables and objects
@@ -65,6 +66,22 @@ public class MethodsandArrays {
 		//Eight Queens puzzle: placing 8 queens on a chessboard such that no two queens can attack eachother
 		String gridOutput = "";
 		char[][] gameGrid = new char[8][8];
+		//initialize the array
+				for(int i = 0; i < gameGrid.length; i++) {
+					for(int j = 0; j < gameGrid[i].length; j++) {
+						gameGrid[i][j] = ' ';
+					}
+				}
+
+		gameGrid[0][0] = 'Q';
+		gameGrid[1][4] = 'Q';
+		gameGrid[2][7] = 'Q';
+		gameGrid[3][5] = 'Q';
+		gameGrid[4][2] = 'Q';
+		gameGrid[5][6] = 'Q';
+		gameGrid[6][1] = 'Q';
+		gameGrid[7][3] = 'Q';
+		
 		gridOutput = Arrays.deepToString(gameGrid).replace("], ", "]\n");
 		gridOutput = gridOutput.substring(1,gridOutput.length() - 1).replace("[", "|").replace("]", "|").replace(", ","|");
 		System.out.println(gridOutput);
