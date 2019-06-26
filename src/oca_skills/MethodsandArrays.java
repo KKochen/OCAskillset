@@ -1,5 +1,7 @@
 package oca_skills;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -85,6 +87,34 @@ public class MethodsandArrays {
 		gridOutput = Arrays.deepToString(gameGrid).replace("], ", "]\n");
 		gridOutput = gridOutput.substring(1,gridOutput.length() - 1).replace("[", "|").replace("]", "|").replace(", ","|");
 		System.out.println(gridOutput);
+		
+		//Simple hangman game which reads words from a .txt file on the computer
+		File words = new java.io.File("C:\\Users\\Darth Phoenix\\Documents\\eclipsemars\\Exampractice\\src\\hangman.txt");
+		System.out.println("Does this file exist? " + words.exists());
+		int misses = 0;
+		try {
+			Scanner wordReader = new Scanner(words);
+			if(wordReader.hasNext()) {
+				String solution = wordReader.next();
+				String answer = "";
+				char[] convertingAnswer = new char[solution.length()];
+				for(int i = 0; i < solution.length(); i++ ) {
+					answer += "*";
+				}
+
+				System.out.print("(Guess) Enter a letter in word " + answer + " >");
+				char guess = input.next().charAt(0);
+				for(int i = 0; i < solution.length(); i++ ) {
+					if(guess == solution.charAt(i)) {
+						//Working on this bit here
+					}
+				}
+				System.out.print("The word is: " + solution + ". You missed " + misses + "time.");
+			}
+		}
+		catch (FileNotFoundException ex) {
+			System.out.println("Whoops. That file isn't there where you thought it was.");
+		}
 	}
 
 	public static int sumOfDoubleEvenPlace(String number) {
